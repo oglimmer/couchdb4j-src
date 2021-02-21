@@ -314,7 +314,7 @@ public class Session {
 			    entity = new StringEntity(content, DEFAULT_CHARSET);
 				post.setEntity(entity);
 				post.setHeader(new BasicHeader("Content-Type", MIME_TYPE_JSON));
-			} catch (UnsupportedEncodingException e) {
+			} catch (Exception e) {
 				log.error(ExceptionUtils.getStackTrace(e));
 			}
 		}
@@ -342,7 +342,7 @@ public class Session {
 				if (ctype != null) {
 				  post.setHeader(new BasicHeader("Content-Type", ctype));
 				}
-			} catch (UnsupportedEncodingException e) {
+			} catch (Exception e) {
 				log.error(ExceptionUtils.getStackTrace(e));
 			}
 		}
@@ -372,7 +372,7 @@ public class Session {
 				entity = new StringEntity(content, DEFAULT_CHARSET);
 				put.setEntity(entity);
 				put.setHeader(new BasicHeader("Content-Type", MIME_TYPE_JSON));
-			} catch (UnsupportedEncodingException e) {
+			} catch (Exception e) {
 				log.error(ExceptionUtils.getStackTrace(e));
 			}
 		}
@@ -390,7 +390,7 @@ public class Session {
 				entity = new StringEntity(content, DEFAULT_CHARSET);
 				put.setEntity(entity);
 				put.setHeader(new BasicHeader("Content-Type", ctype));
-			} catch (UnsupportedEncodingException e) {
+			} catch (Exception e) {
 				log.error(ExceptionUtils.getStackTrace(e));
 			}
 		}
@@ -416,7 +416,7 @@ public class Session {
 				if (ctype!=null) {
 					put.setHeader(new BasicHeader("Content-Type", ctype));
 				}
-			} catch (UnsupportedEncodingException e) {
+			} catch (Exception e) {
 				log.error(ExceptionUtils.getStackTrace(e));
 			}
 		}
@@ -519,7 +519,7 @@ public class Session {
 		{
 			return URLEncoder.encode(paramValue, DEFAULT_CHARSET);
 		} 
-		catch (UnsupportedEncodingException e)
+		catch (Exception e)
 		{
 			throw new RuntimeException(e);
 		}	
